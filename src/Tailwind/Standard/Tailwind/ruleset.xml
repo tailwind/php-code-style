@@ -17,6 +17,20 @@
             />
         </properties>
     </rule>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+    <!--Spacing issues and declarations-->
+    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
+
+    <!--Finally settling the tabs vs spaces argument-->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <!--PSR2-->
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+    <rule ref="PSR2.Methods.MethodDeclaration"/>
+
 </ruleset>

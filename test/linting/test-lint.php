@@ -17,5 +17,8 @@ class Foo {
 
         /// We prefer the [] array syntax
         $array = array(1,2,3);
+
+        // Variable declarations should be on separate lines
+        $x = 1; $y=2; $z = 3;
     }
 }
