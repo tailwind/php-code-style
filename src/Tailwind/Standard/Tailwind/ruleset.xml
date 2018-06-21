@@ -17,5 +17,6 @@
             />
         </properties>
     </rule>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
 </ruleset>

@@ -13,5 +13,9 @@ class Foo {
 
         // count should be used in lieu of sizeof
         $count = sizeof([1,2,3]);
+
+
+        /// We prefer the [] array syntax
+        $array = array(1,2,3);
     }
 }
