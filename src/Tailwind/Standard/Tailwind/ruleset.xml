@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="tailwind">
+    <description>
+        Rules for Tailwind's PHP codebase. If you disagree talk with Janell she is the goddess of all things PHP and will have the correct answer.
+        http://edorian.github.io/php-coding-standard-generator/#phpcs can also be helpful to visualize these.
+    </description>
+    <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+</ruleset>

@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-0": {
-      "Tailwind\\Standard\\": "src/"
+      "Tailwind\\Standard": "src/Tailwind/Standard"
     }
   },
   "minimum-stability": "stable"
