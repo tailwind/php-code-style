@@ -1,0 +1,23 @@
+{
+  "name": "tailwind/php-code-style",
+  "description": "A SquizLabs Code Sniffer 2.0 coding standard and set of rules for Tailwind's PHP codebase. ",
+  "keywords": ["code sniffer", "squizlabs", "phpcs"],
+  "homepage": "https://github.com/tailwind/php-code-style",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Will Washburn",
+      "email": "will@tailwindapp.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "squizlabs/php_codesniffer": "2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Tailwind\\Standard\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
