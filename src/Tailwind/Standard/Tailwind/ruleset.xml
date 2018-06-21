@@ -5,5 +5,6 @@
         http://edorian.github.io/php-coding-standard-generator/#phpcs can also be helpful to visualize these.
     </description>
     <rule ref="Generic.Classes.DuplicateClassName"/>
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
 </ruleset>
