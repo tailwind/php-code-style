@@ -4,7 +4,18 @@
         Rules for Tailwind's PHP codebase. If you disagree talk with Janell she is the goddess of all things PHP and will have the correct answer.
         http://edorian.github.io/php-coding-standard-generator/#phpcs can also be helpful to visualize these.
     </description>
+
+    <!--Generic rules-->
     <rule ref="Generic.Classes.DuplicateClassName"/>
     <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property
+                    name="forbiddenFunctions"
+                    type="array"
+                    value="sizeof=>count,delete=>unset,print=>echo,ppx=>null,pjx=>null,pp=>null,dd=>null,pj=>null,var_dump=>null"
+            />
+        </properties>
+    </rule>
     <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
 </ruleset>

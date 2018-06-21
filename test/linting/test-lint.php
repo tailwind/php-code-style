@@ -7,5 +7,11 @@ class Foo {
         if ($x === 1) {
 
         }
+
+        // disallowed functions should be a problem
+        ppx('this is for debugging!');
+
+        // count should be used in lieu of sizeof
+        $count = sizeof([1,2,3]);
     }
 }
