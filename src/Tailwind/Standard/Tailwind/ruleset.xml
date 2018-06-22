@@ -16,6 +16,8 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="Generic.Arrays.ArrayIndent" />
 
+    <!-- Align the double arrows. -->
+    <rule ref="WordPress.Arrays.MultipleStatementAlignment" />
 
     <!-- ========================= -->
     <!-- ======== Strings ======== -->
