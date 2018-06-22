@@ -1,8 +1,10 @@
-<?php
+<?php namespace Tailwind\Sniffs\Namespaces;
 
-class Tailwind_Sniffs_Namespaces_NamespaceDeclarationSniff  implements PHP_CodeSniffer_Sniff
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
+class Tailwind_Sniffs_Namespaces_NamespaceDeclarationSniff  implements Sniff
 {
-
     /**
      * Returns an array of tokens this test wants to listen for.
      *
@@ -16,13 +18,13 @@ class Tailwind_Sniffs_Namespaces_NamespaceDeclarationSniff  implements PHP_CodeS
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile
+     * @param File $phpcsFile
      * @param int                  $stackPtr  The position of the current token in
      *                                        the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
