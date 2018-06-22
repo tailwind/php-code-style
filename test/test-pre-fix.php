@@ -13,6 +13,10 @@ class Foo {
 
     public function bar($x)
     {
+        // We should use single quotes if not evaluating anything
+        $foo = "bar";
+        $baz = "foo $foo";
+        $ban = 'foo';
 
         // We prefer the new [] array syntax
         $array = array(1,2,3);
