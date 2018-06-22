@@ -44,7 +44,8 @@ class Foo {
         $null = NuLl;
 
         // php array function calls should be lowercase
-        $bar = array_MAP($array,function($thing){$thing+1;});
+        $bar = array_MAP($array,function($thing){
+            $thing+1;});
 
         // There shouldn't be any space before a semicolon
         $foo = 'bar' ;

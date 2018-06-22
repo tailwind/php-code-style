@@ -15,8 +15,13 @@ class Foo {
 
     public function bar($x)
     {
+        // We should use single quotes if not evaluating anything
+        $foo = 'bar';
+        $baz = "foo $foo";
+        $ban = 'foo';
+
         // We prefer the new [] array syntax
-        $array = [1,2,3];
+        $array = [1, 2, 3];
 
         // Variable declarations should be on separate lines
         // They should align on the equals
@@ -44,7 +49,8 @@ class Foo {
         $null  = null;
 
         // php array function calls should be lowercase
-        $bar = array_map($array,function($thing){$thing + 1;
+        $bar = array_map($array,function($thing){
+            $thing + 1;
 
         });
 
@@ -55,14 +61,14 @@ class Foo {
         // There should be alignment in the definitions
         // There should be a comma after last array element
         $array = [
-            'foo' => 'bar',
+            'foo'        => 'bar',
             'bazmachine' => 'biz',
-            'will' => 'washburn'
+            'will'       => 'washburn',
         ];
 
         // This should not change
         $STH->execute([
-            ':user_id' => $account->user_id
+            ':user_id' => $account->user_id,
         ]);
 
 
