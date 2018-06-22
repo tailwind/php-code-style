@@ -2,12 +2,47 @@
 <ruleset name="tailwind">
     <description>
         Rules for Tailwind's PHP codebase. If you disagree talk with Janell she is the goddess of all things PHP and will have the correct answer.
-        http://edorian.github.io/php-coding-standard-generator/#phpcs can also be helpful to visualize these.
+        List of rules: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Customisable-Sniff-Properties
     </description>
 
-    <!--Generic rules-->
+    <!--We use some WordPress rules, so we autoload those in-->
+    <autoload>./vendor/wp-coding-standards/wpcs/WordPress/PHPCSAliases.php</autoload>
+
+    <!-- ========================= -->
+    <!-- ======== Arrays ========= -->
+    <!-- ========================= -->
+    <!-- Covers rule: Note the comma after the last array item: this is recommended. -->
+    <rule ref="WordPress.Arrays.CommaAfterArrayItem"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Arrays.ArrayIndent" />
+
+
+    <!-- ========================= -->
+    <!-- ======== Strings ======== -->
+    <!-- ========================= -->
+    <!-- Covers rule: Use single and double quotes when appropriate.
+     If you're not evaluating anything in the string, use single quotes. -->
+    <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+    <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
+        <severity>0</severity>
+    </rule>
+
+    <!-- ========================= -->
+    <!-- ======= Classes ========= -->
+    <!-- ========================= -->
     <rule ref="Generic.Classes.DuplicateClassName"/>
-    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="PSR2.Methods.MethodDeclaration"/>
+    <rule ref="PSR2.Classes.PropertyDeclaration"/>
+
+    <!-- ========================= -->
+    <!-- ====== Namespace ======== -->
+    <!-- ========================= -->
+    <rule ref="PSR2.Namespaces.UseDeclaration"/>
+    <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+
+    <!-- ========================= -->
+    <!-- ====== Functions ======== -->
+    <!-- ========================= -->
     <rule ref="Generic.PHP.ForbiddenFunctions">
         <properties>
             <property name="forbiddenFunctions" type="array">
@@ -22,38 +57,11 @@
             </property>
         </properties>
     </rule>
-    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
-    <rule ref="Generic.Files.LineEndings"/>
 
-    <!--Arrays n stuff-->
-    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-    <rule ref="Generic.Arrays.ArrayIndent"/>
-
-    <!--Function delcarations-->
-    <!--<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>-->
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+
     <!--Ensure the default values only are set after required ones-->
     <rule ref="PEAR.Functions.ValidDefaultValue"/>
-
-    <!--Spacing issues and declarations-->
-    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
-    <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
-    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
-    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
-    <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
-    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
-
-    <!--Finally settling the tabs vs spaces argument-->
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-
-    <!--PSR2-->
-    <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
-    <rule ref="PSR2.Methods.MethodDeclaration"/>
-    <rule ref="PSR2.Classes.PropertyDeclaration"/>
-    <rule ref="PSR2.Namespaces.UseDeclaration"/>
-
-    <!--Ensure brackets are right-->
-    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
 
     <!--Make sure there is one space between function definitions in classes-->
     <rule ref="Squiz.WhiteSpace.FunctionSpacing">
@@ -62,13 +70,40 @@
         </properties>
     </rule>
 
+    <!--Checks that there are no blank lines after a functions opening brace
+        and that opening braces are on the new line.-->
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+
+    <!-- ========================= -->
+    <!-- ==== Code Analysis ====== -->
+    <!-- ========================= -->
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+    <!-- ========================= -->
+    <!-- ========= Files ========= -->
+    <!-- ========================= -->
+    <rule ref="Generic.Files.LineEndings"/>
+
+    <!-- ========================= -->
+    <!-- ====== Whitespace ======= -->
+    <!-- ========================= -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
+    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
+    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
+
+    <!--Finally settling the tabs vs spaces argument-->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <!--Ensure brackets are right-->
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+
     <!--Ensure that cast statements have no spacing issues-->
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
-
-    <!--Checks that there are no blank lines after a functions opening brace
-    and that opening braces are on the new line.-->
-    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
 
     <!--There should be a single space between language constructs-->
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
@@ -82,19 +117,13 @@
     <!--Ensure there is no closing tag, which might cause issues-->
     <rule ref="Zend.Files.ClosingTag"/>
 
-    <!--constants-->
+    <!-- ========================= -->
+    <!-- ======= Constants ======= -->
+    <!-- ========================= -->
     <!--Ours should be shouting, true/false/null should be lowercase-->
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
     <rule ref="Generic.PHP.LowerCaseConstant"/>
 
-
-    <!--// No spaces after opening bracket and no spaces before closing bracket-->
-    <!--// No blank lines at the start or the end of a control structure-->
-    <!--<rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/>-->
-
-    <!--Checks that there is one empty line before the closing brace of a
-    function but zero before the closing the brace of nested functions.-->
-    <!--<rule ref="Squiz.WhiteSpace.FunctionClosingBraceSpace"/>-->
 
     <!--Ensure function calls from php are all lowercase-->
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
