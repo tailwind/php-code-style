@@ -65,6 +65,16 @@ class Foo {
         ]);
 
 
+        // This should not change
+        $image_puller =
+            M::mock(\Tailwind\Image\Processing\ImagePuller::class)
+             ->shouldReceive('getRaw')
+             ->with($cropped)
+             ->andReturn($cropped_image)
+             ->once()
+             ->getMock()
+             ->shouldIgnoreMissing();
+
 
     }
     /**
