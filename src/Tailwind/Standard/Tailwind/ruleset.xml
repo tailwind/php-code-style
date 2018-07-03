@@ -34,7 +34,9 @@
     <!-- ========================= -->
     <rule ref="Generic.Classes.DuplicateClassName"/>
     <rule ref="PSR2.Methods.MethodDeclaration"/>
-    <rule ref="PSR2.Classes.PropertyDeclaration"/>
+    <rule ref="PSR2.Classes.PropertyDeclaration">
+        <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
+    </rule>
 
     <!-- ========================= -->
     <!-- ====== Namespace ======== -->
