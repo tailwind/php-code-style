@@ -6,7 +6,7 @@
     </description>
 
     <!--We use some WordPress rules, so we autoload those in-->
-    <autoload>./vendor/wp-coding-standards/wpcs/WordPress/PHPCSAliases.php</autoload>
+    <autoload>./vendor/wp-coding-standards/wpcs/WordPress/PHPCSHelper.php</autoload>
 
     <!-- ========================= -->
     <!-- ======== Arrays ========= -->
